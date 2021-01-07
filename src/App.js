@@ -23,7 +23,7 @@ function App() {
             <DashboardPage />
           } />
           <Route exact path="/signup" render={props =>
-            <SignupPage />
+            <SignupPage {...props} />
           } />
           <Route exact path="/Login" render={props =>
             <LoginPage />
