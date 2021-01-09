@@ -1,32 +1,66 @@
-import Header from'./components/Header'
+import { useState } from 'react'
+
+import { getUser, logout } from './services/userService';
+ 
+import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import DashboardPage from './pages/DashboardPage'
 import SignupPage from './pages/SignupPage'
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 
 import './App.css';
+import { getUserFromToken } from './services/tokenService';
 
 
-function App() {
+function App(props) {
+
+  const [userState, setUserState] = useState({
+    user: getUser()
+  });
+
+  function handleSignupOrLogin() {
+    setUserState({
+      user: getUser()
+    });
+  }
+
+
+  function handleLogout() {
+    logout();
+
+    setUserState({ user: null });
+
+    props.history.push('/');
+  }
+
   return (
     <div className="App">
-      <Header />
+      <Header handleLogout={handleLogout} user={userState.user} />
       <main>
         <Switch>
           <Route exact path="/" render={props =>
             <HomePage />
           } />
           <Route exact path="/dashboard" render={props =>
-            <DashboardPage />
+            userState.user ?
+              <DashboardPage />
+              :
+              <Redirect to="/login" />
           } />
           <Route exact path="/signup" render={props =>
-            <SignupPage {...props} />
+            <SignupPage
+              {...props}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
           } />
           <Route exact path="/Login" render={props =>
-            <LoginPage />
+            <LoginPage
+              {...props}
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
           } />
           </Switch>
       </main>
@@ -35,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
