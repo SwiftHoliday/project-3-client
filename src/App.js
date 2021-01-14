@@ -1,7 +1,7 @@
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
+import { getNews } from './services/news-api';
 import { getUser, logout } from './services/userService';
- 
+
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
@@ -27,14 +27,41 @@ function App(props) {
     });
   }
 
-
   function handleLogout() {
     logout();
-
+    
     setUserState({ user: null });
-
-    props.history.push('/');
+    
+    //props.history.push('/');
   }
+
+  const [newsArticle, setNewsArticle] = useState({
+    articles: [{
+      source: {
+      id: null,
+      name: ''
+      },
+    author: null,
+    title: null,
+    description: null,
+    url: null,
+    urlToImage: null,
+    publishedAt: null,
+    content: null
+  }]});
+
+  async function getNewsData() {
+    const newsData = await getNews();
+    setNewsArticle(newsData);
+    console.log(newsData.articles[0])
+  }
+
+  useEffect(() => {
+    getNewsData();
+    console.log('effect');
+  }, []);
+
+
 
   return (
     <div className="App">
@@ -46,7 +73,7 @@ function App(props) {
           } />
           <Route exact path="/dashboard" render={props =>
             userState.user ?
-              <DashboardPage />
+              <DashboardPage articles={newsArticle.articles} />
               :
               <Redirect to="/login" />
           } />
