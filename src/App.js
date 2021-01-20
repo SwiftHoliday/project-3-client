@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import DashboardPage from './pages/DashboardPage'
 import SignupPage from './pages/SignupPage'
+// import SearchPage from './pages/SearchPage'
 
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 
@@ -71,6 +72,17 @@ function App(props) {
           <Route exact path="/" render={props =>
             <HomePage />
           } />
+
+{/* TODO: SEARCH PAGE
+          <Route exact path="/search" render={props =>
+            userState.user ?
+              <SearchPage /> 
+              :
+              <Redirect to="/login" />
+          } />
+              */}
+
+
           <Route exact path="/dashboard" render={props =>
             userState.user ?
               <DashboardPage articles={newsArticle.articles} />
