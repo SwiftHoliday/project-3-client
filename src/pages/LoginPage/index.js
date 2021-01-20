@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { login } from '../../services/userService';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import InputGroup from 'react-bootstrap/InputGroup'
 
 function LoginPage(props) {
     const [formState, setFormState] = useState(getInitialFormState());
@@ -34,21 +37,34 @@ function LoginPage(props) {
     }
     return (
         <div className="Page">
-            <form onSubmit={handleSubmit}>
-                <input 
-                value={formState.email} 
-                onChange={handleChange} 
-                name="email" 
-                type="email" 
-                />
-                <input 
-                value={formState.password} 
-                onChange={handleChange} 
-                name="password" 
-                type="password" 
-                />
-                <button>Login</button>
-            </form>
+            
+
+            <Form onSubmit={handleSubmit}>
+                
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                        value={formState.email} 
+                        onChange={handleChange} 
+                        name="email"
+                        type="email"
+                        placeholder="Enter email" />   
+                </Form.Group>
+
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                        value={formState.password} 
+                        onChange={handleChange} 
+                        name="password"
+                        type="password"
+                        placeholder="Password" />
+                </Form.Group>
+
+                <Button variant="primary"type="submit">
+                        Login
+                </Button>
+            </Form>
         </div>
     );
     
