@@ -17,7 +17,6 @@ import { getUserFromToken } from './services/tokenService';
 
 
 function App(props) {
-
   const [userState, setUserState] = useState({
     user: getUser()
   });
@@ -63,9 +62,34 @@ function App(props) {
   }, []);
 
 
+  const [scroll, setScroll] = useState(0);
+
+  useEffect(() => {
+
+    let scrollBarHandler = () => {
+
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scroll = `${totalScroll / windowHeight}`;
+      
+      setScroll(scroll);
+    }
+
+    window.addEventListener("scroll", scrollBarHandler);
+    return () => window.removeEventListener("scroll", scrollBarHandler);
+  });
+
+
+
+
 
   return (
     <div className="App">
+      <div id="scrollBarContainer">
+        <div id="scrollBar" style={{transform: `scale(${scroll}, 1)`, opacity: `${scroll}` }}></div>
+      </div>
+      
+
       <Header handleLogout={handleLogout} user={userState.user} />
       <main>
         <Switch>
