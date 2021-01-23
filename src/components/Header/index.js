@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import InputGroup from 'react-bootstrap/InputGroup'
+import { GiWorld } from 'react-icons/gi'
 
 function Header(props) {
     return (
         <header className={styles.Header}>
             <Link to="/">
-                <h1>Project 3</h1>
+                <GiWorld size="2.7em"GiWorld />
             </Link>
             <nav>
                 <ul>
