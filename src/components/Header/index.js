@@ -9,7 +9,7 @@ function Header(props) {
     return (
         <header className={styles.Header}>
             <Link to="/">
-                <GiWorld size="2.7em"GiWorld />
+             <GiWorld size="3em"GiWorld />
             </Link>
             <nav>
                 <ul>

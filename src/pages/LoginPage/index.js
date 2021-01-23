@@ -1,3 +1,4 @@
+import './LoginPage.css'
 import { useState } from 'react'
 import { login } from '../../services/userService';
 import Form from 'react-bootstrap/Form'
@@ -36,9 +37,14 @@ function LoginPage(props) {
         }
     }
     return (
+        <main>
         <div className="Page">
+        <div className="globe2">
+        </div>
+        <div className="LoginText">
+            <p>Login</p>
+        </div>  
             
-
             <Form onSubmit={handleSubmit}>
                 
                 <Form.Group controlId="formBasicEmail">
@@ -65,9 +71,9 @@ function LoginPage(props) {
                         Login
                 </Button>
             </Form>
-        </div>
+            </div>   
+        </main>
     );
-    
 }
 
 export default LoginPage
