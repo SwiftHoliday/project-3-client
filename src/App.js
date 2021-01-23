@@ -13,7 +13,7 @@ import SignupPage from './pages/SignupPage'
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 
 import './App.css';
-import { getUserFromToken } from './services/tokenService';
+// import { getUserFromToken } from './services/tokenService';
 
 
 function App(props) {

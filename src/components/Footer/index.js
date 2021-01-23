@@ -10,11 +10,11 @@ function Footer(props) {
             <p>Copyright &copy; All Rights Reserved {new Date().getFullYear()} What In The World!?</p>
             
              
-            <a href="https://github.com/SwiftHoliday" target="_blank">
+            <a href="https://github.com/SwiftHoliday" target="_blank" rel="noreferrer">
                 <FaGithub size="2em" color="yellow" textDecoration="none"/>
             </a>
 
-            <a href="https://www.linkedin.com/in/jonathyncarter/" target="_blank">
+            <a href="https://www.linkedin.com/in/jonathyncarter/" target="_blank" rel="noreferrer">
                 <FaLinkedin size="2em" color="dodgerblue" />
             </a>
         

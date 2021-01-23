@@ -2,16 +2,19 @@ import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import InputGroup from 'react-bootstrap/InputGroup'
+// import InputGroup from 'react-bootstrap/InputGroup'
 import { GiWorld } from 'react-icons/gi'
 
 function Header(props) {
     return (
         <header className={styles.Header}>
             <Link to="/">
-             <GiWorld size="3em"GiWorld />
+                <GiWorld size="3em" />
+                What In The World!?
             </Link>
             <nav>
+                
+
                 <ul>
                     {
                         props.user ? 
@@ -24,7 +27,7 @@ function Header(props) {
                     </li>
                                 
                     <li>
-                        {/* TODO: <Link to="/search">Search</Link> 
+                          <Link to="/search">Search</Link> 
                         <Form inline>
                             <Form.Control
                                 type="text"
@@ -32,7 +35,7 @@ function Header(props) {
                                 className=" mr-sm-2" />
                             <Button type="submit">Submit</Button>
                             </Form>
-                        */}
+                        
                     </li>
                 </>
                     :
