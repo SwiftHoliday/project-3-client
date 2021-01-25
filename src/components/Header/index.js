@@ -1,8 +1,5 @@
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-// import InputGroup from 'react-bootstrap/InputGroup'
 import { GiWorld } from 'react-icons/gi'
 
 function Header(props) {
@@ -28,13 +25,6 @@ function Header(props) {
                                 
                     <li>
                           <Link to="/search">Search</Link> 
-                        <Form inline>
-                            <Form.Control
-                                type="text"
-                                placeholder="Search"
-                                className=" mr-sm-2" />
-                            <Button type="submit">Submit</Button>
-                            </Form>
                         
                     </li>
                 </>

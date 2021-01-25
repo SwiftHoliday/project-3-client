@@ -7,13 +7,11 @@ function DashboardPage(props) {
         <div>
             {props.articles.map((article, idx) => (
                 <NewsArticleCard key={idx}
-                    //pageSize={article.pageSize}
                     title={article.title}
                     content={article.content}
                     urlToImage={article.urlToImage}
                     url={article.url}
                     author={article.author}>
-                    
                     </NewsArticleCard>
             ))}
         </div>

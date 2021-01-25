@@ -1,32 +1,35 @@
-import { useState } from 'react'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import InputGroup from 'react-bootstrap/InputGroup'
+//import { useState } from 'react';
+import React from "react";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-function SearchBar(props) {
-    const [formState, setFormState] = useState(getInitialFormState());
 
-    function getInitialFormState() {
-        return {
-            search: ""
-        }
+class SearchBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { searchTopic: "" };
     }
 
-
-
-    
-    return (
-        <div className="Page">
-
-<Form inline>
-    <Form.Control
-        type="text"
-        placeholder="Search"
-        className=" mr-sm-2" />
-    <Button type="submit">Search</Button>
-  </Form>
-    </div>
-)
+    render() {
+        return (
+            <div className="Page">
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Group>
+                        <Form.Input
+                            placeholder="Search What's New"
+                            type="search"
+                            name="topic"
+                            input="text"
+                            value={this.state.searchTopic}
+                            onChange={this.handleChange}
+                        />
+                        <Button type="submit">Go!</Button>
+                    </Form.Group>
+                </Form>
+            </div>
+        );
+    }
 }
+
 
 export default SearchBar
