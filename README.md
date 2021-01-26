@@ -1,6 +1,6 @@
 # What In The World!?
 
-In the time's we live in today I think we can often find ourselves asking the question, *What In The World is going on!?* If you are someone who likes to stay in the know or catch an interesting article, you've come to the right place! This is a simple web app that displays the top-headlins for the day. Hope you enjoy!
+With the time's we live in today I think we can often find ourselves asking the question, *What In The World is going on!?* If you are someone who likes to stay in the know or catch an interesting article, you've come to the right place! This is a simple web app that displays the top-headlins for the day. Hope you enjoy!
 
 
 
