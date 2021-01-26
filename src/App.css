@@ -20,7 +20,6 @@
 }
 
 #scrollBar{
- /* background: linear-gradient(to left, dodgerblue, rgb(94, 255, 30));  */
    background: dodgerblue; 
   transform-origin: top left;
   transform: scale(0, 0);

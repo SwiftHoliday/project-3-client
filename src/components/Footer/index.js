@@ -1,8 +1,6 @@
 import styles from './Footer.module.css';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-
-
 function Footer(props) {
     return (
         <footer className={styles.Footer}>

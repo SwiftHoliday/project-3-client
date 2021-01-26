@@ -1,55 +1,32 @@
-import './SearchPage.css'
+import './SearchPage.css';
 import { render } from '@testing-library/react';
-// import { useState } from 'react'
-// import Form from 'react-bootstrap/Form'
-// import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import { BsTools } from 'react-icons/bs';
 
+function handleSearch(props) {
 
-
-    function handleSearch(props) {
-         
-        
-    
-
-   render()  
+render()  
 return (
-    <main>
-        <div className="Page">
-            <div className="globe3">
-        </div>
-        <div className="SearchText">
-            <p>Search</p>
-            </div> 
-            
-{/* 
-            <Form onSubmit={handleSubmit}>
-                
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+        <main>
+            <div className="Page">
+                <div className="globe3">
+                    </div>
+                        <div className="SearchText">
+                            <p>Coming Soon!</p>
+                        </div> 
+                <Form inline>
                     <Form.Control
-                        value={formState.email} 
-                        onChange={handleChange} 
-                        name="email"
-                        type="email"
-                        placeholder="Enter email" />   
-                </Form.Group>
-                </Form> */}
-
-
-
+                        class="input"
+                        type="text"
+                        placeholder="Search"
+                        className=" mr-sm-2" />
+                    <Button type="submit">Go!</Button>
+                </Form> 
+                <BsTools size="8.5em" color="red" />
             </div>
         </main>
     );
 }
 
-export default handleSearch
-
-
-/* <Form inline>
-<Form.Control
-        class="input"
-        type="text"
-        placeholder="Search"
-        className=" mr-sm-2" />
-<Button type="submit">Go!</Button>
-</Form> */
+export default handleSearch;

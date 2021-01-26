@@ -1,6 +1,6 @@
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-import { GiWorld } from 'react-icons/gi'
+import { GiWorld } from 'react-icons/gi';
 
 function Header(props) {
     return (
