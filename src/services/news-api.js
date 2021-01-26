@@ -1,12 +1,17 @@
-const API_TOKEN = process.env.REACT_APP_NEWS_API_KEY;
-const BASE_URL = 'https://newsapi.org/v2/'
-
+const API_TOKEN2 = process.env.REACT_APP_NEWS_API_KEY2;
 
 export function getNews(req, res) {
   
-  return fetch(BASE_URL + 'top-headlines?country=us&apiKey=' + API_TOKEN + '&pageSize=38')
-  .then((res) => res.json());
+
+  return fetch('http://api.datanews.io/v1/headlines?&size=25&country=us&apiKey=' + API_TOKEN2, {
+    method: "GET",
+    headers: {
+      "Content-Type": "text/plain"
+    }
+  })
+    .then((res) => res.json());
 }
+
 
 
 /* TODO: Search Fetch Function

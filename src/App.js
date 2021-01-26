@@ -17,6 +17,7 @@ function App(props) {
   const [userState, setUserState] = useState({
     user: getUser()
   });
+  
 
   function handleSignupOrLogin() {
     setUserState({
@@ -30,30 +31,46 @@ function App(props) {
     setUserState({ user: null });
   }
 
-  const [newsArticle, setNewsArticle] = useState({
-    articles: [{
-      source: {
-      id: null,
-      name: ''
-      },
-    author: null,
-    title: null,
-    description: null,
-    url: null,
-    urlToImage: null,
-    publishedAt: null,
-    content: null
-    }]
-  });
+  // const [newsArticle, setNewsArticle] = useState({
+  //   articles: [{
+  //     source: {
+  //     id: null,
+  //     name: ''
+  //     },
+  //   author: null,
+  //   title: null,
+  //   description: null,
+  //   url: null,
+  //   urlToImage: null,
+  //   publishedAt: null,
+  //   content: null
+  //   }]
+  // });
 
+  const [newsHit, setNewsHit] = useState({
+    hits: [{
+      source: null,
+      url: null,
+      authors: [],
+      title: null,
+      pubDate: null,
+      country: null,
+      language: null,
+      description: null,
+      imageUrl: null,
+      content: null
+    },
+    ]
+  });
+  
   async function getNewsData() {
     const newsData = await getNews();
-    setNewsArticle(newsData);
+    setNewsHit(newsData);
   }
+
 
   useEffect(() => {
     getNewsData();
-    console.log('effect');
   }, []);
 
 
@@ -99,7 +116,7 @@ function App(props) {
 
           <Route exact path="/dashboard" render={props =>
             userState.user ?
-              <DashboardPage articles={newsArticle.articles} />
+              <DashboardPage hits={newsHit.hits} />
               :
               <Redirect to="/login" />
           } />
