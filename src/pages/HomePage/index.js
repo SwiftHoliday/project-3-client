@@ -1,9 +1,15 @@
+import './HomePage.css';
+
 function HomePage(props) {
     return (
-        <div>
-            HomePage
-        </div>
+        <main>
+            <div className="globe">
+            </div>
+            <div className="HomeText">
+            <p>What In The World!?</p>
+            </div>     
+        </main> 
     );
 }
 
-export default HomePage
+export default HomePage;

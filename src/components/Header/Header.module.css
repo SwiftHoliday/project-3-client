@@ -5,19 +5,26 @@
     align-items: center;
     background-color: black;
     box-shadow: 3px 3px 5px 3px lightgray;
+    
 }
 
 .Header > nav > ul {
     display: flex;
-    list-style: none;
+    list-style: none;  
 }
 
 .Header > nav > ul li {
     font-size: 25px;
     margin-right: 20px;
+    padding-top: 9px;
 }
 
 .Header a {
     text-decoration: none;
     color: white;
+    font-family: 'Faster One', cursive;
+    font-size: 23px;
 }
+
+
+

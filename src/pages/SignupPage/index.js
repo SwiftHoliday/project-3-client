@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { signup } from '../../services/userService';
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 
 function SignupPage(props) {
@@ -35,7 +35,15 @@ function SignupPage(props) {
         }
     }
     return (
+        
+    <main>
         <div className="Page">
+        <div className="globe2">
+        </div>
+        <div className="LoginText">
+            <p>Sign Up</p>
+                    </div>  
+                    
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formFirstName">
                     <Form.Label>First Name</Form.Label> 
@@ -79,10 +87,11 @@ function SignupPage(props) {
                 </Form.Group>
 
                 <Button variant="primary"type="submit">
-                        Submit
+                        Create
                 </Button>
             </Form>
         </div>
+    </main>
     );
 }
 export default SignupPage;

@@ -1,13 +1,17 @@
 import styles from './Header.module.css';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { GiWorld } from 'react-icons/gi';
 
 function Header(props) {
     return (
         <header className={styles.Header}>
             <Link to="/">
-                <h1>Project 3</h1>
+                <GiWorld size="3em" />
+                What In The World!?
             </Link>
             <nav>
+                
+
                 <ul>
                     {
                         props.user ? 
@@ -18,12 +22,18 @@ function Header(props) {
                     <li>
                         <Link to="/dashboard">Dashboard</Link>
                     </li>
+                                
+                    <li>
+                          <Link to="/search">Search</Link> 
+                        
+                    </li>
                 </>
                     :
                 <>
                     <li>
                         <Link to="/login">Login</Link>
                     </li>
+                    
                     <li>
                         <Link to="/signup">Sign Up</Link>
                             </li>

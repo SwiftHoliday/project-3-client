@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import './LoginPage.css';
+import { useState } from 'react';
 import { login } from '../../services/userService';
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import InputGroup from 'react-bootstrap/InputGroup'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 function LoginPage(props) {
     const [formState, setFormState] = useState(getInitialFormState());
@@ -11,14 +11,16 @@ function LoginPage(props) {
         return {
             email: "",
             password: "",
-        }
+        };
     }
+
     function handleChange(event) {
         setFormState(prevState => ({
             ...prevState,
             [event.target.name]: event.target.value
         }));
     }
+
     async function handleSubmit(event) {
         try {
             event.preventDefault();
@@ -35,10 +37,16 @@ function LoginPage(props) {
             alert(error.message);
         }
     }
+    
     return (
+        <main>
         <div className="Page">
+        <div className="globe2">
+        </div>
+        <div className="LoginText">
+            <p>Login</p>
+        </div>  
             
-
             <Form onSubmit={handleSubmit}>
                 
                 <Form.Group controlId="formBasicEmail">
@@ -65,9 +73,9 @@ function LoginPage(props) {
                         Login
                 </Button>
             </Form>
-        </div>
+            </div>   
+        </main>
     );
-    
 }
 
-export default LoginPage
+export default LoginPage;
