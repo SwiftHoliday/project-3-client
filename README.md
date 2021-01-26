@@ -20,7 +20,7 @@ With the time's we live in today I think we can often find ourselves asking the 
 * [React Bootstrap](https://react-bootstrap.github.io/)
 * [React Icons](https://react-icons.github.io/react-icons/)
 * [Google Fonts](https://fonts.google.com/)
-* [News Api](https://newsapi.org/)
+* [News Api](https://datanews.io/docs/headlines)
 
 
 # Getting Started
