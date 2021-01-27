@@ -31,22 +31,7 @@ function App(props) {
     setUserState({ user: null });
   }
 
-  // const [newsArticle, setNewsArticle] = useState({
-  //   articles: [{
-  //     source: {
-  //     id: null,
-  //     name: ''
-  //     },
-  //   author: null,
-  //   title: null,
-  //   description: null,
-  //   url: null,
-  //   urlToImage: null,
-  //   publishedAt: null,
-  //   content: null
-  //   }]
-  // });
-
+  
   const [newsHit, setNewsHit] = useState({
     hits: [{
       source: null,
