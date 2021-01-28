@@ -3,7 +3,7 @@ const API_TOKEN2 = process.env.REACT_APP_NEWS_API_KEY2;
 export function getNews(req, res) {
   
 
-  return fetch('http://api.datanews.io/v1/headlines?&size=100&country=us&apiKey=' + API_TOKEN2, {
+  return fetch('https://api.datanews.io/v1/headlines?&size=100&country=us&apiKey=' + API_TOKEN2, {
     method: "GET",
     headers: {
       "Content-Type": "text/plain"
