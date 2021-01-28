@@ -26,7 +26,7 @@ With the time's we live in today I think we can often find ourselves asking the 
 # Getting Started
 
 * [Trello](https://trello.com/b/fzB5qpjU/what-in-the-world)
-* [What In The World!? App LocalHost](http://localhost:3000/)
+* [What In The World!?](https://what-in-the-world.netlify.app)
 
 # Next Steps
 
