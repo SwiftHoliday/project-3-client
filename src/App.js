@@ -49,8 +49,8 @@ function App(props) {
   });
   
   async function getNewsData() {
-    const newsData = await getNews();
-    setNewsHit(newsData);
+    const { data } = await getNews();
+    setNewsHit(data.hits);
   }
 
 
