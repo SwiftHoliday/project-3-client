@@ -50,7 +50,7 @@ function App(props) {
   
   async function getNewsData() {
     const { data } = await getNews();
-    setNewsHit(data.hits);
+    setNewsHit(data);
   }
 
 
